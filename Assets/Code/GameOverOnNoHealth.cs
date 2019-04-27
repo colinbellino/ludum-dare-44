@@ -21,10 +21,10 @@ public class GameOverOnNoHealth : MonoBehaviour
 	{
 		if (playerHealth.current != 0)
 		{
-			return ;
+			return;
 		}
 
-		Debug.Log("T'est mort POULET !");
+		Debug.Log("T'es mort POULET !");
 		var scene = SceneManager.GetActiveScene();
 		SceneManager.LoadScene(scene.name);
 	}
