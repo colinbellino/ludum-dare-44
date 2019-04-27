@@ -41,14 +41,14 @@ public class HealthEditor : Editor
 
 		if (GUILayout.Button("Add 10 Health"))
 		{
-			Debug.Log("+10");
 			health.AddHealth(10);
+			Debug.Log($"{health.current} / {health.max}");
 		}
 
 		if (GUILayout.Button("Remove 10 Health"))
 		{
-			Debug.Log("-10");
 			health.AddHealth(-10);
+			Debug.Log($"{health.current} / {health.max}");
 		}
 	}
 }
