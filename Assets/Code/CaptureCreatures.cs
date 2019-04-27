@@ -5,11 +5,9 @@ public class CaptureCreatures : MonoBehaviour
 {
 	public Action<CaptureData> CaptureAction = delegate { };
 
-	private void OnGUI()
+	void Update()
 	{
-		Event e = Event.current;
-
-		if (e.isKey && e.keyCode == KeyCode.Return)
+		if (Input.GetKey(KeyCode.Return))
 		{
 			Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1f);
 
