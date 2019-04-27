@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ChickenInput : MonoBehaviour, IInput
+public class ChickenAI : MonoBehaviour, IInput
 {
 	private const float stopDistance = 0.1f;
 	private Transform owner;
@@ -38,5 +38,11 @@ public class ChickenInput : MonoBehaviour, IInput
 	private void NextWaypoint()
 	{
 		currentIndex = (currentIndex + 1) % waypoints.Length;
+	}
+
+	public void FleeFromTarget(Vector3 targetPosition)
+	{
+		// TODO: Move some chicken around here
+		Debug.Log("I must Flee kwak");
 	}
 }
