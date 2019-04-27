@@ -14,7 +14,7 @@ public class ChickenInput : MonoBehaviour, IInput
 	{
 		owner = GetComponent<Transform>();
 
-		if (currentIndex < 1)
+		if (waypoints.Length < 1)
 		{
 			Debug.LogWarning("Missing waypoints.");
 		}
@@ -22,7 +22,7 @@ public class ChickenInput : MonoBehaviour, IInput
 
 	private void Update()
 	{
-		if (currentIndex > 0)
+		if (waypoints.Length > 0)
 		{
 			var destination = waypoints[currentIndex];
 			var distance = destination.position - owner.position;

@@ -25,7 +25,6 @@ public class Damageable : MonoBehaviour
 
 		playerHealth.AddHealth(-data.damage);
 
-		Debug.Log(playerHealth.current);
 		// TODO: Decrease HP ?
 		// TODO: Play hurt sound.
 	}
