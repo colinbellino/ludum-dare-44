@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class CaptureCreatures : MonoBehaviour
 {
+
 	public Action<CaptureData> CaptureAction = delegate { };
 
 	void Update()
 	{
-		if (Input.GetKey(KeyCode.Return))
+		if (Input.GetButton("Capture"))
 		{
 			Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1f);
 
