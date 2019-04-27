@@ -13,17 +13,25 @@ public class ChickenInput : MonoBehaviour, IInput
 	private void OnEnable()
 	{
 		owner = GetComponent<Transform>();
+
+		if (currentIndex < 1)
+		{
+			Debug.LogWarning("Missing waypoints.");
+		}
 	}
 
 	private void Update()
 	{
-		var destination = waypoints[currentIndex];
-		var distance = destination.position - owner.position;
-		move = distance.normalized;
-
-		if (distance.magnitude < stopDistance)
+		if (currentIndex > 0)
 		{
-			NextWaypoint();
+			var destination = waypoints[currentIndex];
+			var distance = destination.position - owner.position;
+			move = distance.normalized;
+
+			if (distance.magnitude < stopDistance)
+			{
+				NextWaypoint();
+			}
 		}
 	}
 
