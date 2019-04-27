@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SoundInterval : MonoBehaviour
@@ -13,7 +12,8 @@ public class SoundInterval : MonoBehaviour
 	{
 		if (Time.time > timestamp)
 		{
-			source.clip = clips[0];
+			var randomIndex = Random.Range(0, clips.Length - 1);
+			source.clip = clips[randomIndex];
 			source.Play();
 
 			timestamp = Time.time + playInterval;
