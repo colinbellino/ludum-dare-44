@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour, IInput
 {
-	// public Vector2 move => Input.GetAxis("Horizontal");
 	public Vector2 move { get; private set; }
 
 	private void Update()
