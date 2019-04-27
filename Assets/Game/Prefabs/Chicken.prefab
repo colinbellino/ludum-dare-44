@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5811825155059855984}
   - component: {fileID: 8475304436962438904}
   - component: {fileID: 2136145048893064392}
+  - component: {fileID: 58499222407517416}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -101,10 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e1932ae4aea8847b948d73b4d65cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoints: []
 --- !u!114 &956831143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbb0cf2f04cdd34e9f785b482f22b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: 27e64e70a104bca4781ba570b84d2702, type: 3}
   playInterval: 3
@@ -156,6 +153,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88774839fb832064182ff9ab05315b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &58499222407517416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58499222524428608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5c1ce4548f5e8489f453b620f9ebe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &58499222805358723

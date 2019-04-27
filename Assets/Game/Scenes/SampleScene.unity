@@ -672,6 +672,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 58499222524428623, guid: c581bd399fccd8a4d8e968ff8551abae,
         type: 3}
+      propertyPath: waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 58499222524428623, guid: c581bd399fccd8a4d8e968ff8551abae,
+        type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 2137336327}
@@ -685,10 +690,6 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 1400329684}
-    - target: {fileID: 956831143, guid: c581bd399fccd8a4d8e968ff8551abae, type: 3}
-      propertyPath: source
-      value: 
-      objectReference: {fileID: 2112300849}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c581bd399fccd8a4d8e968ff8551abae, type: 3}
 --- !u!1001 &7712523451152999604
