@@ -18,5 +18,8 @@ public class Damageable : MonoBehaviour
 		if (data.target.transform != transform) { return; }
 
 		Debug.Log("BIM -> " + data.damage);
+
+		// TODO: Decrease HP ?
+		// TODO: Play hurt sound.
 	}
 }

@@ -11,7 +11,7 @@ public class SoundInterval : MonoBehaviour
 
 	private void OnEnable()
 	{
-		audioPlayer.GetComponent<AudioPlayer>();
+		audioPlayer = GetComponent<AudioPlayer>();
 	}
 
 	private void Update()
