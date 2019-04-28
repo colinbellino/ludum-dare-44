@@ -74,6 +74,7 @@ public class Shop : MonoBehaviour
 		UpgradeItem.name = "Upgrade : " + upgrade.name;
 		UpgradeItem.transform.position = currentSpawnPoints;
 		UpgradeItem.GetComponent<UpgradeItem>().SetLabel(upgrade.name);
+		UpgradeItem.GetComponent<UpgradeItem>().SetCost("" + upgrade.cost);
 		UpgradeItem.SetActive(false);
 
 		return new UpgradeItemsData() {item = UpgradeItem, upgrade = upgrade};
