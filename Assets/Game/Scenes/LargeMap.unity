@@ -741,6 +741,24 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1889312991}
+    - target: {fileID: 4543624860721494729, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -751
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543624860721494729, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128528814, guid: 3b5dd1e9482b9324eb1b58d564288e2d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 155
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128528814, guid: 3b5dd1e9482b9324eb1b58d564288e2d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b5dd1e9482b9324eb1b58d564288e2d, type: 3}
 --- !u!114 &1889312991 stripped
