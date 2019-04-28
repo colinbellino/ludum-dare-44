@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+	[SerializeField] private Animator animator;
+	[SerializeField] private float speed = 4f;
+
 	private IInput input;
 	private Rigidbody2D rb;
-
-	[SerializeField] private float speed = 4f;
 
 	private void OnEnable()
 	{
