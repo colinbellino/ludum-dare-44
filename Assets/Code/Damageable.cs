@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-	[SerializeField] private float knockbak;
+	[SerializeField] private float knockback;
 	private Health playerHealth;
 
 	private void OnEnable()
@@ -19,21 +19,25 @@ public class Damageable : MonoBehaviour
 	private void ReceiveDamage(DamageData data)
 	{
 		// if the collision was with me
-		if (data.target.transform != transform) { return; }
+		if (data.target.transform != transform)
+		{
+			return;
+		}
 
-		var rb = data.target.GetComponent<Rigidbody2D>();
-		var input = GetComponent<IInput>();
 
 		playerHealth.AddHealth(-data.damage);
 
-		var difference = data.source.position - transform.position;
-		difference = -difference.normalized * knockbak;
+		Knockback(data.target.transform, data.source.transform, knockback, -1);
+		// TODO: Play hurt sound.
+		// TODO: Visual
+	}
 
-		Debug.Log("Outch ! " + difference);
+	private void Knockback(Transform source, Transform target, float knockback, int direction)
+	{
+		var rb = source.GetComponent<Rigidbody2D>();
+		var difference = target.position - transform.position;
+		difference = direction * difference.normalized * knockback;
 
 		rb.AddForce(difference, ForceMode2D.Impulse);
-		// TODO: Play hurt sound.
-		// TODO: Knock back
-		// TODO: Visual
 	}
 }
