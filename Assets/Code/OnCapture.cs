@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class OnCapture : MonoBehaviour
 {
-	private CaptureCreatures captureCreatures;
+	private OnContact captureCreatures;
 	private Health playerHealth;
 
 	private void OnEnable()
 	{
-		captureCreatures = GetComponent<CaptureCreatures>();
+		captureCreatures = GetComponent<OnContact>();
 		playerHealth = GetComponent<Health>();
 		captureCreatures.CaptureAction += OnCreatureCaptured;
 	}

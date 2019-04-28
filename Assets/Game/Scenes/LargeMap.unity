@@ -585,6 +585,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1052158372, guid: f53230355639b4eb99c8472f27d3b8e1, type: 3}
+      propertyPath: QuestList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052158372, guid: f53230355639b4eb99c8472f27d3b8e1, type: 3}
       propertyPath: UpgradeList.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 5e0910aa652eb44239da7d1f06ef789b,
@@ -603,6 +607,16 @@ PrefabInstance:
       propertyPath: UpgradeList.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 5e0910aa652eb44239da7d1f06ef789b,
+        type: 2}
+    - target: {fileID: 1052158372, guid: f53230355639b4eb99c8472f27d3b8e1, type: 3}
+      propertyPath: QuestList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: cc2260870e8e345eebf9b8e6862434a2,
+        type: 2}
+    - target: {fileID: 1052158372, guid: f53230355639b4eb99c8472f27d3b8e1, type: 3}
+      propertyPath: QuestList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: cc2260870e8e345eebf9b8e6862434a2,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f53230355639b4eb99c8472f27d3b8e1, type: 3}
