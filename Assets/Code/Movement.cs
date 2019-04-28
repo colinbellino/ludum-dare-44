@@ -23,9 +23,9 @@ public class Movement : MonoBehaviour
 		if (animator)
 		{
 			var renderer = animator.GetComponent<SpriteRenderer>();
-			if (renderer)
+			if (renderer && rb.velocity.magnitude > 0f)
 			{
-				renderer.flipX = rb.velocity.x < 0;
+				renderer.flipX = rb.velocity.x < 0f;
 			}
 		}
 	}
