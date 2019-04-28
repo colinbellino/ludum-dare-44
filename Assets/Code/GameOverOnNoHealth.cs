@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -26,11 +28,17 @@ public class GameOverOnNoHealth : MonoBehaviour
 			return;
 		}
 
-		Debug.Log("T'es mort POULET !");
-		SceneManager.LoadScene("TitleScene", LoadSceneMode.Single);
-
-		if (onGameOver != null) {
+		if (onGameOver != null)
+		{
 			onGameOver.Invoke();
 		}
+
+		StartCoroutine(WaitAndTitle());
+	}
+
+	private IEnumerator WaitAndTitle()
+	{
+		yield return new WaitForSeconds(3);
+		SceneManager.LoadScene("TitleScene", LoadSceneMode.Single);
 	}
 }

@@ -19,8 +19,12 @@ public class Health : MonoBehaviour
 
 	private void ClampCurrentHealth(int value)
 	{
-		current = Math.Max(0, Math.Min(max, value));
-		HealthChangeAction();
+		var newValue = Math.Max(0, Math.Min(max, value));
+		if (current != newValue)
+		{
+			current = newValue;
+			HealthChangeAction();
+		}
 	}
 
 	public void AddHealth(int value)
@@ -42,13 +46,11 @@ public class HealthEditor : UnityEditor.Editor
 		if (GUILayout.Button("Add 10 Health"))
 		{
 			health.AddHealth(10);
-			Debug.Log($"{health.current} / {health.max}");
 		}
 
 		if (GUILayout.Button("Remove 10 Health"))
 		{
 			health.AddHealth(-10);
-			Debug.Log($"{health.current} / {health.max}");
 		}
 	}
 }
