@@ -19,5 +19,14 @@ public class Movement : MonoBehaviour
 	private void Update()
 	{
 		rb.velocity = input.move * speed;
+
+		if (animator)
+		{
+			var renderer = animator.GetComponent<SpriteRenderer>();
+			if (renderer)
+			{
+				renderer.flipX = rb.velocity.x < 0;
+			}
+		}
 	}
 }
