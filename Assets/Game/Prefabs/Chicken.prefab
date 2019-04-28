@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8475304436962438904}
   - component: {fileID: 58499222407517416}
   - component: {fileID: 321798028581304941}
+  - component: {fileID: 6939150963980548986}
   m_Layer: 9
   m_Name: Chicken
   m_TagString: Creature
@@ -167,6 +168,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4a925e73b6f4ee5a124e233ce069cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6939150963980548986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58499222524428608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8389c1509de411e8fca11bc6d66b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CreatureData: {fileID: 11400000, guid: d4a0cffd151f24f4887376c7c7fd63e5, type: 2}
 --- !u!1 &58499222805358723
 GameObject:
   m_ObjectHideFlags: 0

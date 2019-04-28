@@ -22,7 +22,7 @@ public class OnContact : MonoBehaviour
 
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].transform == transform)
+			if (colliders[i].transform == transform || !colliders[i].CompareTag("Creature"))
 			{
 				continue;
 			}

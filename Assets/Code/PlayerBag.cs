@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class PlayerBag : MonoBehaviour
 {
-	[SerializeField] private Creature CreatureObject;
 	private List<Creature> CapturedCreatures;
 	private List<Upgrade> Upgrades;
 
 	private void OnEnable()
 	{
-		CapturedCreatures = new List<Creature> {CreatureObject, CreatureObject, CreatureObject};
+		CapturedCreatures = new List<Creature>();
 		Upgrades = new List<Upgrade>();
 	}
 
 	public List<Creature> GetCapturedCreatures()
 	{
 		return CapturedCreatures;
+	}
+
+	public void AddCapturedCreature(Creature creature)
+	{
+		CapturedCreatures.Add(creature);
+		Debug.Log(creature.name + " captured ! Count: " + CapturedCreatures.Count);
 	}
 
 	public void RemoveCapturedCreature(Creature creature)

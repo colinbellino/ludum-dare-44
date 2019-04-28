@@ -4,31 +4,28 @@ using UnityEngine;
 
 public class OnCapture : MonoBehaviour
 {
-	private OnContact captureCreatures;
-	private Health playerHealth;
+	private OnContact CaptureCreatures;
+	private Health PlayerHealth;
+	private PlayerBag PlayerBag;
 
 	private void OnEnable()
 	{
-		captureCreatures = GetComponent<OnContact>();
-		playerHealth = GetComponent<Health>();
-		captureCreatures.CaptureAction += OnCreatureCaptured;
+		CaptureCreatures = GetComponent<OnContact>();
+		PlayerHealth = GetComponent<Health>();
+		PlayerBag = GetComponent<PlayerBag>();
+		CaptureCreatures.CaptureAction += OnCreatureCaptured;
 	}
 
 	private void OnDisable()
 	{
-		captureCreatures.CaptureAction -= OnCreatureCaptured;
+		CaptureCreatures.CaptureAction -= OnCreatureCaptured;
 	}
 
 	private void OnCreatureCaptured(CaptureData data)
 	{
-		switch (data.captured.name)
-		{
-				case "Chicken":
-					playerHealth.AddHealth(10);
-					break;
-				default:
-					Debug.Log("Hey what did you capture ?");
-					break;
-		}
+		var capturedCreatureData = data.captured.GetComponent<CreatureFacade>().CreatureData;
+
+		PlayerHealth.AddHealth(capturedCreatureData.health);
+		PlayerBag.AddCapturedCreature(capturedCreatureData);
 	}
 }
