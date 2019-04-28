@@ -8,12 +8,14 @@ public class Damageable : MonoBehaviour
 	private void OnEnable()
 	{
 		DamageOnTriggerEnter.DamageAction += ReceiveDamage;
+		Shop.UpgradeChosenAction += ReceiveUpgrade;
 		playerHealth = GetComponent<Health>();
 	}
 
 	private void OnDisable()
 	{
 		DamageOnTriggerEnter.DamageAction -= ReceiveDamage;
+		Shop.UpgradeChosenAction -= ReceiveUpgrade;
 	}
 
 	private void ReceiveDamage(DamageData data)
@@ -27,5 +29,11 @@ public class Damageable : MonoBehaviour
 
 		// TODO: Decrease HP ?
 		// TODO: Play hurt sound.
+	}
+
+	private void ReceiveUpgrade(UpgradeChosenData data)
+	{
+		ReceiveDamage(new DamageData() {target = transform, damage = data.cost});
+		Debug.Log("Upgrade received with ID : " + data.id);
 	}
 }

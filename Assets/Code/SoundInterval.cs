@@ -19,7 +19,6 @@ public class SoundInterval : MonoBehaviour
 		if (Time.time > timestamp)
 		{
 			var randomIndex = Random.Range(0, clips.Length);
-			Debug.Log("Chicken sound No " + randomIndex);
 			audioPlayer.PlayOneShot(clips[randomIndex]);
 
 			timestamp = Time.time + playInterval;
