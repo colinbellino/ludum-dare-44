@@ -8,6 +8,7 @@ public class OnContact : MonoBehaviour
 	[SerializeField] private GameObject PlayerProjectile;
 	private GameObject ProjectileInstance;
 	private IInput input;
+	private float range = 2f;
 
 	private void OnEnable()
 	{
@@ -27,7 +28,7 @@ public class OnContact : MonoBehaviour
 			var positionToCapture = CalculateProjectilePosition();
 
 			CaptureCreature(positionToCapture);
-			ProjectileInstance.transform.position = positionToCapture;
+			ProjectileInstance.GetComponent<Rigidbody2D>().MovePosition(positionToCapture);
 			ProjectileInstance.SetActive(true);
 		}
 		else
@@ -55,7 +56,7 @@ public class OnContact : MonoBehaviour
 
 	private Vector3 CalculateProjectilePosition()
 	{
-		var positionToCapture = (Vector3) (input.move.normalized * 2) + transform.position;
+		var positionToCapture = (Vector3) (input.move.normalized * range) + transform.position;
 
 		return positionToCapture;
 	}
