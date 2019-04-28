@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   upgrade: {fileID: 11400000, guid: 5e0910aa652eb44239da7d1f06ef789b, type: 2}
-  todo:
+  creatures:
   - {fileID: 11400000, guid: d4a0cffd151f24f4887376c7c7fd63e5, type: 2}
   - {fileID: 11400000, guid: d4a0cffd151f24f4887376c7c7fd63e5, type: 2}
   - {fileID: 11400000, guid: d4a0cffd151f24f4887376c7c7fd63e5, type: 2}

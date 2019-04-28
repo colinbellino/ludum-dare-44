@@ -23,9 +23,15 @@ public class Shop : MonoBehaviour
 		}
 
 		Debug.Log("Hello Player");
+		if (currentQuestIndex < QuestList.Count)
+		{
+			CompleteQuest();
+		}
+	}
 
+	private void CompleteQuest()
+	{
 		var playerBag = Player.GetComponent<PlayerBag>();
-
 		var currentQuest = QuestList[currentQuestIndex];
 		var capturedCreatures = playerBag.GetCapturedCreatures();
 		var countQuestDone = 0;
@@ -45,10 +51,10 @@ public class Shop : MonoBehaviour
 			playerBag.AddUpgrade(currentQuest.upgrade);
 			foreach (var creature in currentQuest.creatures)
 			{
+				Debug.Log("Remove");
 				playerBag.RemoveCapturedCreature(creature);
 			}
 			currentQuestIndex++;
 		}
-
 	}
 }

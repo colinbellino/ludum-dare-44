@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class DamageOnTriggerEnter : MonoBehaviour
 {
-	[SerializeField] private int damage = 1;
-
+	private Creature CreatureData;
 	public static Action<DamageData> DamageAction = delegate { };
 
 	private void OnEnable()
 	{
+		CreatureData = GetComponent<CreatureFacade>().CreatureData;
 		CollisionEventBroadcaster.TriggerEnterAction += BroadcastDamageAction;
 	}
 
@@ -22,7 +22,7 @@ public class DamageOnTriggerEnter : MonoBehaviour
 		// if the source was with me.
 		if (data.source.transform != transform) { return; }
 
-		var actionData = new DamageData { target = data.other.transform, damage = damage };
+		var actionData = new DamageData { target = data.other.transform, damage = CreatureData.damage };
 		DamageAction(actionData);
 	}
 }
