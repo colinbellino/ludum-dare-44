@@ -39,7 +39,7 @@ public class Damageable : MonoBehaviour
 	private void Knockback(Transform source, Transform target, float knockback, int direction)
 	{
 		var difference = (target.position - transform.position);
-		Debug.Log("difference " + difference);
+		// Debug.Log("difference " + difference);
 
 		rb.AddForce(difference, ForceMode2D.Impulse);
 	}

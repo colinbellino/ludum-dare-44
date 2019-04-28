@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnContact : MonoBehaviour
 {
-	public Action<CaptureData> CaptureAction = delegate { };
+	public static Action<CaptureData> CaptureAction = delegate { };
 
 	private void Update()
 	{
@@ -27,22 +27,17 @@ public class OnContact : MonoBehaviour
 				continue;
 			}
 
-			// Destroy captured creature
-			Debug.Log("You successfully capture something, is it a Chicken ?!");
-			GameObject.Destroy(colliders[i].transform.gameObject);
-
 			// Send capture event
-			var captureData = new CaptureData {captured = colliders[i].transform};
+			var captureData = new CaptureData { captor = transform, captured = colliders[i].transform };
 			CaptureAction(captureData);
 		}
 	}
 }
 
-public class QuestData
-{
-}
+public class QuestData { }
 
 public class CaptureData
 {
+	public Transform captor;
 	public Transform captured;
 }

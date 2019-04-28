@@ -10,24 +10,25 @@ public class OnCapture : MonoBehaviour
 
 	private void OnEnable()
 	{
-		CaptureCreatures = GetComponent<OnContact>();
 		PlayerHealth = GetComponent<Health>();
 		PlayerBag = GetComponent<PlayerBag>();
-		CaptureCreatures.CaptureAction += OnCreatureCaptured;
+
+		OnContact.CaptureAction += OnCreatureCaptured;
 	}
 
 	private void OnDisable()
 	{
-		CaptureCreatures.CaptureAction -= OnCreatureCaptured;
+		OnContact.CaptureAction -= OnCreatureCaptured;
 	}
 
 	private void OnCreatureCaptured(CaptureData data)
 	{
+		if (data.captor != transform) { return; }
+
+		// TODO: Feedback;
 		var capturedCreatureData = data.captured.GetComponent<CreatureFacade>().CreatureData;
 
 		PlayerHealth.AddHealth(capturedCreatureData.health);
 		PlayerBag.AddCapturedCreature(capturedCreatureData);
-
-		// TODO: Feedback;
 	}
 }
