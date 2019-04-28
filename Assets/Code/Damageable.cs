@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
 	[SerializeField] private float knockback;
 	private Health playerHealth;
 	private Rigidbody2D rb;
+	public UnityEvent OnHit;
 
 	private void OnEnable()
 	{
@@ -31,6 +33,7 @@ public class Damageable : MonoBehaviour
 		// TODO: Play hurt sound.
 		// TODO: Visual
 		Knockback(data.target.transform, data.source.transform, knockback, -1);
+		OnHit.Invoke();
 	}
 
 	private void Knockback(Transform source, Transform target, float knockback, int direction)
