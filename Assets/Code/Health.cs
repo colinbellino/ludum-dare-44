@@ -1,5 +1,4 @@
 using System;
-using UnityEditor;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -30,8 +29,9 @@ public class Health : MonoBehaviour
 	}
 }
 
-[CustomEditor(typeof(Health))]
-public class HealthEditor : Editor
+#if UNITY_EDITOR
+[UnityEditor.CustomEditor(typeof(Health))]
+public class HealthEditor : UnityEditor.Editor
 {
 	public override void OnInspectorGUI()
 	{
@@ -52,3 +52,4 @@ public class HealthEditor : Editor
 		}
 	}
 }
+#endif
