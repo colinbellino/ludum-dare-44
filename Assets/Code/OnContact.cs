@@ -5,20 +5,40 @@ using UnityEngine;
 public class OnContact : MonoBehaviour
 {
 	public static Action<CaptureData> CaptureAction = delegate { };
+	[SerializeField] private GameObject PlayerProjectile;
+	private GameObject ProjectileInstance;
+	private IInput input;
+
+	private void OnEnable()
+	{
+		input = GetComponent<IInput>();
+
+		if (PlayerProjectile)
+		{
+			ProjectileInstance = Instantiate(PlayerProjectile);
+			ProjectileInstance.SetActive(false);
+		}
+	}
 
 	private void Update()
 	{
-		CaptureCreature(Input.GetButton("Capture"));
+		if (Input.GetButton("Capture"))
+		{
+			var positionToCapture = CalculateProjectilePosition();
+
+			CaptureCreature(positionToCapture);
+			ProjectileInstance.transform.position = positionToCapture;
+			ProjectileInstance.SetActive(true);
+		}
+		else
+		{
+			ProjectileInstance.SetActive(false);
+		}
 	}
 
-	private void CaptureCreature(bool isCapture)
+	private void CaptureCreature(Vector3 positionToCapture)
 	{
-		if (!isCapture)
-		{
-			return;
-		}
-
-		var colliders = Physics2D.OverlapCircleAll(transform.position, 1f);
+		var colliders = Physics2D.OverlapCircleAll(positionToCapture, 1f);
 
 		for (int i = 0; i < colliders.Length; i++)
 		{
@@ -28,13 +48,22 @@ public class OnContact : MonoBehaviour
 			}
 
 			// Send capture event
-			var captureData = new CaptureData { captor = transform, captured = colliders[i].transform };
+			var captureData = new CaptureData {captor = transform, captured = colliders[i].transform};
 			CaptureAction(captureData);
 		}
 	}
+
+	private Vector3 CalculateProjectilePosition()
+	{
+		var positionToCapture = (Vector3) (input.move.normalized * 2) + transform.position;
+
+		return positionToCapture;
+	}
 }
 
-public class QuestData { }
+public class QuestData
+{
+}
 
 public class CaptureData
 {

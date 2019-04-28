@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 553107738771458308}
-  speed: 2
+  defaultSpeed: 4
 --- !u!114 &58499222524428623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e1932ae4aea8847b948d73b4d65cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedingFlee: 4
+  maxFleeDistance: 10
   waypoints: []
 --- !u!114 &956831143
 MonoBehaviour:
@@ -119,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 27e64e70a104bca4781ba570b84d2702, type: 3}
+  - {fileID: 8300000, guid: 007df21b37309436c8e95d375dc7eb2d, type: 3}
   playInterval: 3
 --- !u!114 &5811825155059855984
 MonoBehaviour:

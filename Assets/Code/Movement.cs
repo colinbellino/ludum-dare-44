@@ -5,13 +5,15 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 	[SerializeField] private Animator animator;
-	[SerializeField] private float speed = 4f;
+	[SerializeField] private float defaultSpeed = 4f;
+	private float speed;
 
 	private IInput input;
 	private Rigidbody2D rb;
 
 	private void OnEnable()
 	{
+		SetDefaultSpeed();
 		input = GetComponent<IInput>();
 		rb = GetComponent<Rigidbody2D>();
 	}
@@ -28,5 +30,15 @@ public class Movement : MonoBehaviour
 				renderer.flipX = rb.velocity.x < 0f;
 			}
 		}
+	}
+
+	public void SetSpeed(float newSpeed)
+	{
+		speed = newSpeed;
+	}
+
+	public void SetDefaultSpeed()
+	{
+		speed = defaultSpeed;
 	}
 }

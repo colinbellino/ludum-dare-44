@@ -585,6 +585,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 58499222524428623, guid: c581bd399fccd8a4d8e968ff8551abae,
+        type: 3}
+      propertyPath: maxFleeDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8475304436962438904, guid: c581bd399fccd8a4d8e968ff8551abae,
         type: 3}
       propertyPath: m_Enabled
@@ -1084,6 +1089,11 @@ PrefabInstance:
         type: 3}
       propertyPath: waypoints.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 58499222524428623, guid: c581bd399fccd8a4d8e968ff8551abae,
+        type: 3}
+      propertyPath: maxFleeDistance
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c581bd399fccd8a4d8e968ff8551abae, type: 3}
