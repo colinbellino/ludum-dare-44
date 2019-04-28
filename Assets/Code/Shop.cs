@@ -10,45 +10,82 @@ public class Shop : MonoBehaviour
 	[SerializeField] private GameObject UpgradePrefab;
 	private List<UpgradeItemsData> UpgradeItems;
 	private GameObject player;
+	private bool lastDisplayItemStatus;
 
 	private void OnEnable()
 	{
 		UpgradeItems = new List<UpgradeItemsData>();
 		player = GameObject.FindWithTag("Player");
+		lastDisplayItemStatus = false;
 		int count = 0;
 		foreach (Upgrade upgrade in UpgradeList)
 		{
-			UpgradeItems.Add(GenerateUpgradeItem(upgrade, count));
+			UpgradeItems.Add(GenerateUpgradeItem(upgrade));
 			count++;
 		}
 	}
 
 	private void Update()
 	{
-		var i = 1;
-		var indexToRemove = new List<int>();
-		foreach (var upgradeItem in UpgradeItems)
+		// Could be move to a specific script OnUpgradeChosen
+		UpgradeItemsData upgradeItem;
+		if (UpgradeItems.Contains(UpgradeItems[0]) && UpgradeItems[0].item.activeSelf)
 		{
-			if (Input.GetButton("Select-" + i) && upgradeItem.item.activeSelf)
+			if (Input.GetButton("Select-1"))
 			{
+				upgradeItem = UpgradeItems[0];
 				var data = new UpgradeChosenData() {cost = upgradeItem.upgrade.cost, id = upgradeItem.upgrade.id};
 
 				UpgradeChosenAction(data);
-				upgradeItem.item.SetActive(false);
-				indexToRemove.Add(i - 1);
-				i++;
+				DisplayItems(false);
+				UpgradeItems.RemoveAt(0);
 			}
-		}
 
-		foreach (var index in indexToRemove)
-		{
-			UpgradeItems.RemoveAt(index);
+			if (Input.GetButton("Select-2") && UpgradeItems.Contains(UpgradeItems[1]))
+			{
+				upgradeItem = UpgradeItems[1];
+				var data = new UpgradeChosenData() {cost = upgradeItem.upgrade.cost, id = upgradeItem.upgrade.id};
+
+				UpgradeChosenAction(data);
+				DisplayItems(false);
+				UpgradeItems.RemoveAt(1);
+			}
+
+			if (Input.GetButton("Select-3") && UpgradeItems.Contains(UpgradeItems[2]))
+			{
+				upgradeItem = UpgradeItems[2];
+				var data = new UpgradeChosenData() {cost = upgradeItem.upgrade.cost, id = upgradeItem.upgrade.id};
+
+				UpgradeChosenAction(data);
+				DisplayItems(false);
+				UpgradeItems.RemoveAt(2);
+			}
+
+			if (Input.GetButton("Select-4") && UpgradeItems.Contains(UpgradeItems[3]))
+			{
+				upgradeItem = UpgradeItems[3];
+				var data = new UpgradeChosenData() {cost = upgradeItem.upgrade.cost, id = upgradeItem.upgrade.id};
+
+				UpgradeChosenAction(data);
+				DisplayItems(false);
+				UpgradeItems.RemoveAt(3);
+			}
+
+			if (Input.GetButton("Select-5") && UpgradeItems.Contains(UpgradeItems[4]))
+			{
+				upgradeItem = UpgradeItems[4];
+				var data = new UpgradeChosenData() {cost = upgradeItem.upgrade.cost, id = upgradeItem.upgrade.id};
+
+				UpgradeChosenAction(data);
+				DisplayItems(false);
+				UpgradeItems.RemoveAt(4);
+			}
 		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.transform != player.transform)
+		if (other.transform != player.transform && lastDisplayItemStatus != true)
 		{
 			return;
 		}
@@ -58,7 +95,7 @@ public class Shop : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.transform != player.transform)
+		if (other.transform != player.transform && lastDisplayItemStatus != false)
 		{
 			return;
 		}
@@ -66,13 +103,11 @@ public class Shop : MonoBehaviour
 		DisplayItems(false);
 	}
 
-	private UpgradeItemsData GenerateUpgradeItem(Upgrade upgrade, int offset)
+	private UpgradeItemsData GenerateUpgradeItem(Upgrade upgrade)
 	{
-		var currentSpawnPoints = new Vector3(offset, transform.position.y + 1, 0);
-
 		var UpgradeItem = Instantiate(UpgradePrefab);
+
 		UpgradeItem.name = "Upgrade : " + upgrade.name;
-		UpgradeItem.transform.position = currentSpawnPoints;
 		UpgradeItem.GetComponent<UpgradeItem>().SetLabel(upgrade.name);
 		UpgradeItem.GetComponent<UpgradeItem>().SetCost("" + upgrade.cost);
 		UpgradeItem.SetActive(false);
@@ -82,10 +117,23 @@ public class Shop : MonoBehaviour
 
 	private void DisplayItems(bool display)
 	{
+		var count = 0;
 		foreach (var upgradeItem in UpgradeItems)
 		{
+			// Reset all position and Input text when display items
+			if (display)
+			{
+				Debug.Log("Show");
+				var currentSpawnPoints = new Vector3(count, transform.position.y + 1, 0);
+				upgradeItem.item.transform.position = currentSpawnPoints;
+				upgradeItem.item.GetComponent<UpgradeItem>().SetInputText("" + (count + 1));
+			}
+
 			upgradeItem.item.SetActive(display);
+			count++;
 		}
+
+		lastDisplayItemStatus = display;
 	}
 }
 

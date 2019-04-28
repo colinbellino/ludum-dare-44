@@ -8,6 +8,7 @@ public class UpgradeItem : MonoBehaviour
 {
 	[SerializeField] private TextMeshProUGUI label;
 	[SerializeField] private TextMeshProUGUI cost;
+	[SerializeField] private TextMeshProUGUI input;
 
 	public void SetLabel(string text)
 	{
@@ -17,5 +18,10 @@ public class UpgradeItem : MonoBehaviour
 	public void SetCost(string text)
 	{
 		cost.text = text + " HP";
+	}
+
+	public void SetInputText(string text)
+	{
+		input.text = text;
 	}
 }

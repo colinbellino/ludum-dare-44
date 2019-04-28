@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: trap
   m_EditorClassIdentifier: 
   id: 1
-  cost: 0
-  name: Stop Trape
-  spawnPoints: {x: 0, y: 0, z: 0}
+  cost: 50
+  name: Stop Trap
