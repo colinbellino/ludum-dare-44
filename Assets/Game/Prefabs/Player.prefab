@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 8142317237339538288}
   - component: {fileID: 8362546962746030766}
   - component: {fileID: 7310788326123966706}
+  - component: {fileID: 2328308825194956694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -101,6 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53db00dc1870be24db52223078454d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockback: 0
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &6796603522001184214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +198,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.75}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &2328308825194956694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7712523450031832449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619f566d26c1f4bbb9e57c13c2c9554c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7712523450258335314
 GameObject:
   m_ObjectHideFlags: 0

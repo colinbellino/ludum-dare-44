@@ -24,7 +24,6 @@ public class GameOverOnNoHealth : MonoBehaviour
 			return;
 		}
 
-		Debug.Log("T'es mort POULET !");
 		var scene = SceneManager.GetActiveScene();
 		SceneManager.LoadScene(scene.name);
 	}
