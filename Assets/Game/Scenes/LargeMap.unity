@@ -949,33 +949,25 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4543624860721494730, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
+    - target: {fileID: 4543624859365035303, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4543624860721494730, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4543624860721494730, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4543624860721494730, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4543624860721494730, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1889312991}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b5dd1e9482b9324eb1b58d564288e2d, type: 3}
+--- !u!114 &1889312991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1889312991, guid: 3b5dd1e9482b9324eb1b58d564288e2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1811758927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2061117240
 GameObject:
   m_ObjectHideFlags: 0
