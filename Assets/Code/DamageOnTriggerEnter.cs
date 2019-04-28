@@ -22,7 +22,7 @@ public class DamageOnTriggerEnter : MonoBehaviour
 		// if the source was with me.
 		if (data.source.transform != transform) { return; }
 
-		var actionData = new DamageData { target = data.other.transform, damage = CreatureData.damage };
+		var actionData = new DamageData { target = data.other.transform, damage = CreatureData.damage, source = data.source };
 		DamageAction(actionData);
 	}
 }
@@ -30,5 +30,6 @@ public class DamageOnTriggerEnter : MonoBehaviour
 public class DamageData
 {
 	public Transform target;
+	public Transform source;
 	public int damage;
 }

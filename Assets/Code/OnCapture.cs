@@ -27,5 +27,7 @@ public class OnCapture : MonoBehaviour
 
 		PlayerHealth.AddHealth(capturedCreatureData.health);
 		PlayerBag.AddCapturedCreature(capturedCreatureData);
+
+		// TODO: Feedback;
 	}
 }

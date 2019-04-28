@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
+	[SerializeField] private float knockbak;
 	private Health playerHealth;
 
 	private void OnEnable()
@@ -20,11 +21,19 @@ public class Damageable : MonoBehaviour
 		// if the collision was with me
 		if (data.target.transform != transform) { return; }
 
-		Debug.Log("BIM -> " + (-data.damage));
+		var rb = data.target.GetComponent<Rigidbody2D>();
+		var input = GetComponent<IInput>();
 
 		playerHealth.AddHealth(-data.damage);
 
-		// TODO: Decrease HP ?
+		var difference = data.source.position - transform.position;
+		difference = -difference.normalized * knockbak;
+
+		Debug.Log("Outch ! " + difference);
+
+		rb.AddForce(difference, ForceMode2D.Impulse);
 		// TODO: Play hurt sound.
+		// TODO: Knock back
+		// TODO: Visual
 	}
 }
