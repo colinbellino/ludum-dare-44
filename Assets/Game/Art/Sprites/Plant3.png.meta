@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 24104fed210397147ba38bf1bdd6aa9f
+guid: 8f0c76eaf48cb794a9bc87944c163848
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8060887128759994910
-    second: Ground 0
+      213: -8226983221179248462
+    second: Plant3 0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -72,37 +72,26 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 8
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ground 0
+      name: Plant3 0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 8
         height: 8
-      alignment: 7
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96695dd8aaa8b804f98d4ce36518a1d6
-      internalID: -8060887128759994910
+      spriteID: 6b885888aeaa39541be3c887cd6f48da
+      internalID: -8226983221179248462
       vertices: []
       indices: 
       edges: []
@@ -110,7 +99,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1e87e91359768b1448d54a12b595adab
+    spriteID: 08c2a139d9fe29d4fad369fa422375a6
     internalID: 0
     vertices: []
     indices: 
