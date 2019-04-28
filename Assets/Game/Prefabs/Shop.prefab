@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095044c3b0635417a8dfb44c64b3b46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeList:
-  - {fileID: 11400000, guid: 5e0910aa652eb44239da7d1f06ef789b, type: 2}
-  UpgradePrefab: {fileID: 7818563438166476731, guid: b1ff95d28847a48ae861a6335b879f68,
-    type: 3}
+  quests:
+  - {fileID: 11400000, guid: 62d910ff5e87a44828ee39bc9206cabe, type: 2}
+  - {fileID: 11400000, guid: 62d910ff5e87a44828ee39bc9206cabe, type: 2}
+  - {fileID: 11400000, guid: 62d910ff5e87a44828ee39bc9206cabe, type: 2}
 --- !u!61 &5616678365804278967
 BoxCollider2D:
   m_ObjectHideFlags: 0

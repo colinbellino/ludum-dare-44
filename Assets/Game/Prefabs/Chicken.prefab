@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8389c1509de411e8fca11bc6d66b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreatureData: {fileID: 11400000, guid: d4a0cffd151f24f4887376c7c7fd63e5, type: 2}
+  CreatureData: {fileID: 11400000, guid: fbd0e5b917c5f4ee3ae27889e8a9e4b5, type: 2}
 --- !u!1 &58499222805358723
 GameObject:
   m_ObjectHideFlags: 0

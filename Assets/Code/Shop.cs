@@ -5,25 +5,23 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-	[SerializeField] private List<Quest> QuestList;
-	private GameObject Player;
+	[SerializeField] private List<Quest> quests = new List<Quest>();
+	private GameObject player;
 	private int currentQuestIndex;
 
 	private void OnEnable()
 	{
-		currentQuestIndex = 0;
-		Player = GameObject.FindWithTag("Player");
+		player = GameObject.FindWithTag("Player");
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.transform != Player.transform)
+		if (other.transform != player.transform)
 		{
 			return;
 		}
 
-		Debug.Log("Hello Player");
-		if (currentQuestIndex < QuestList.Count)
+		if (currentQuestIndex < quests.Count)
 		{
 			CompleteQuest();
 		}
@@ -31,8 +29,8 @@ public class Shop : MonoBehaviour
 
 	private void CompleteQuest()
 	{
-		var playerBag = Player.GetComponent<PlayerBag>();
-		var currentQuest = QuestList[currentQuestIndex];
+		var playerBag = player.GetComponent<PlayerBag>();
+		var currentQuest = quests[currentQuestIndex];
 		var capturedCreatures = new List<Creature>(playerBag.GetCapturedCreatures());
 		var countQuestDone = 0;
 
@@ -47,8 +45,8 @@ public class Shop : MonoBehaviour
 
 		if (countQuestDone == currentQuest.creatures.Count)
 		{
-			Debug.Log("Quest done.");
 			playerBag.AddUpgrade(currentQuest.upgrade);
+
 			foreach (var creature in currentQuest.creatures)
 			{
 				playerBag.RemoveCapturedCreature(creature);

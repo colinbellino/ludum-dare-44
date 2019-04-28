@@ -4,11 +4,13 @@ public class Damageable : MonoBehaviour
 {
 	[SerializeField] private float knockback;
 	private Health playerHealth;
+	private Rigidbody2D rb;
 
 	private void OnEnable()
 	{
 		DamageOnTriggerEnter.DamageAction += ReceiveDamage;
 		playerHealth = GetComponent<Health>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	private void OnDisable()
@@ -24,19 +26,17 @@ public class Damageable : MonoBehaviour
 			return;
 		}
 
-
 		playerHealth.AddHealth(-data.damage);
 
-		Knockback(data.target.transform, data.source.transform, knockback, -1);
 		// TODO: Play hurt sound.
 		// TODO: Visual
+		Knockback(data.target.transform, data.source.transform, knockback, -1);
 	}
 
 	private void Knockback(Transform source, Transform target, float knockback, int direction)
 	{
-		var rb = source.GetComponent<Rigidbody2D>();
-		var difference = target.position - transform.position;
-		difference = direction * difference.normalized * knockback;
+		var difference = (target.position - transform.position);
+		Debug.Log("difference " + difference);
 
 		rb.AddForce(difference, ForceMode2D.Impulse);
 	}

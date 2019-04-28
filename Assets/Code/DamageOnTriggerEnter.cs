@@ -8,7 +8,9 @@ public class DamageOnTriggerEnter : MonoBehaviour
 
 	private void OnEnable()
 	{
-		CreatureData = GetComponent<CreatureFacade>().CreatureData;
+		var creatureFacade = GetComponent<CreatureFacade>();
+		CreatureData = creatureFacade.CreatureData;
+
 		CollisionEventBroadcaster.TriggerEnterAction += BroadcastDamageAction;
 	}
 
@@ -22,7 +24,12 @@ public class DamageOnTriggerEnter : MonoBehaviour
 		// if the source was with me.
 		if (data.source.transform != transform) { return; }
 
-		var actionData = new DamageData { target = data.other.transform, damage = CreatureData.damage, source = data.source };
+		var actionData = new DamageData
+		{
+			target = data.other.transform,
+				damage = CreatureData.damage,
+				source = data.source
+		};
 		DamageAction(actionData);
 	}
 }

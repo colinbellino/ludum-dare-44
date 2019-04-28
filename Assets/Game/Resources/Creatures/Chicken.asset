@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 1
   name: Chicken
   health: 10
-  damage: 0
+  damage: 10

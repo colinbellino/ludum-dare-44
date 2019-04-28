@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Quest 1
   m_EditorClassIdentifier: 
   id: 1
-  upgrade: {fileID: 11400000, guid: 5e0910aa652eb44239da7d1f06ef789b, type: 2}
+  upgrade: {fileID: 11400000, guid: d5ec1e18fb6064b8bb9a23221295ec21, type: 2}
   creatures:
-  - {fileID: 11400000, guid: d4a0cffd151f24f4887376c7c7fd63e5, type: 2}
-  - {fileID: 11400000, guid: d4a0cffd151f24f4887376c7c7fd63e5, type: 2}
-  - {fileID: 11400000, guid: d4a0cffd151f24f4887376c7c7fd63e5, type: 2}
+  - {fileID: 11400000, guid: fbd0e5b917c5f4ee3ae27889e8a9e4b5, type: 2}
+  - {fileID: 11400000, guid: fbd0e5b917c5f4ee3ae27889e8a9e4b5, type: 2}
+  - {fileID: 11400000, guid: fbd0e5b917c5f4ee3ae27889e8a9e4b5, type: 2}
