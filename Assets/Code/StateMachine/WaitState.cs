@@ -5,7 +5,7 @@ public class WaitState : BaseState
 {
 	private Chicken _chicken;
 	private float _waitTimestamp;
-	private const float _waitDuration = 2f;
+	private const float _waitDuration = 5f;
 
 	public WaitState(Chicken chicken) : base(chicken.gameObject)
 	{
