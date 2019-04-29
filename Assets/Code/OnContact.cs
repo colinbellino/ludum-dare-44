@@ -33,7 +33,8 @@ public class OnContact : MonoBehaviour
 		}
 		else
 		{
-			ProjectileInstance.SetActive(false);
+
+			// ProjectileInstance.SetActive(false);
 		}
 	}
 
@@ -49,22 +50,20 @@ public class OnContact : MonoBehaviour
 			}
 
 			// Send capture event
-			var captureData = new CaptureData {captor = transform, captured = colliders[i].transform};
+			var captureData = new CaptureData { captor = transform, captured = colliders[i].transform };
 			CaptureAction(captureData);
 		}
 	}
 
 	private Vector3 CalculateProjectilePosition()
 	{
-		var positionToCapture = (Vector3) (input.move.normalized * range) + transform.position;
+		var positionToCapture = (Vector3) (input.Move.normalized * range) + transform.position;
 
 		return positionToCapture;
 	}
 }
 
-public class QuestData
-{
-}
+public class QuestData { }
 
 public class CaptureData
 {

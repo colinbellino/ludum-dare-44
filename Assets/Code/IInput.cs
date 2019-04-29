@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface IInput
 {
-	Vector2 move { get; }
+	Vector2 Move { get; }
 }
 
 // Input (player) -> Movement

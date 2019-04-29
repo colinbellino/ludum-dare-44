@@ -4,41 +4,44 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-	[SerializeField] private Animator animator;
-	[SerializeField] private float defaultSpeed = 4f;
-	private float speed;
+	[SerializeField] private Animator _animator;
+	[SerializeField] private float _defaultSpeed = 4f;
+	private float _speed;
 
-	private IInput input;
-	private Rigidbody2D rb;
+	public float Speed => _speed;
+
+	private IInput _input;
+	private Rigidbody2D _rb;
 
 	private void OnEnable()
 	{
+		_input = GetComponent<IInput>();
+		_rb = GetComponent<Rigidbody2D>();
+
 		SetDefaultSpeed();
-		input = GetComponent<IInput>();
-		rb = GetComponent<Rigidbody2D>();
 	}
 
 	private void Update()
 	{
-		rb.velocity = input.move * speed;
+		_rb.velocity = _input.Move * _speed;
 
-		if (animator)
+		if (_animator)
 		{
-			var renderer = animator.GetComponent<SpriteRenderer>();
-			if (renderer && rb.velocity.magnitude > 0f)
+			var renderer = _animator.GetComponent<SpriteRenderer>();
+			if (renderer && _rb.velocity.magnitude > 0f)
 			{
-				renderer.flipX = rb.velocity.x < 0f;
+				renderer.flipX = _rb.velocity.x < 0f;
 			}
 		}
 	}
 
 	public void SetSpeed(float newSpeed)
 	{
-		speed = newSpeed;
+		_speed = newSpeed;
 	}
 
 	public void SetDefaultSpeed()
 	{
-		speed = defaultSpeed;
+		_speed = _defaultSpeed;
 	}
 }
