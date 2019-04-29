@@ -33,8 +33,7 @@ public class OnContact : MonoBehaviour
 		}
 		else
 		{
-
-			// ProjectileInstance.SetActive(false);
+			ProjectileInstance.SetActive(false);
 		}
 	}
 
