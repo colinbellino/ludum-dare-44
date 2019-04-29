@@ -28,7 +28,7 @@ public class OnContact : MonoBehaviour
 			var positionToCapture = CalculateProjectilePosition();
 
 			CaptureCreature(positionToCapture);
-			ProjectileInstance.GetComponent<Rigidbody2D>().MovePosition(positionToCapture);
+			ProjectileInstance.transform.position = positionToCapture;
 			ProjectileInstance.SetActive(true);
 		}
 		else
@@ -60,10 +60,6 @@ public class OnContact : MonoBehaviour
 
 		return positionToCapture;
 	}
-}
-
-public class QuestData
-{
 }
 
 public class CaptureData
