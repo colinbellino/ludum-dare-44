@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8389c1509de411e8fca11bc6d66b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1568342463015963515, guid: 19d9aa2c5aa554eaf9b4a19343b839e5,
+    type: 3}
   CreatureData: {fileID: 11400000, guid: fbd0e5b917c5f4ee3ae27889e8a9e4b5, type: 2}
   OnCaptureEvent:
     m_PersistentCalls:
@@ -173,8 +175,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  explosionPrefab: {fileID: 4238690672222575468, guid: af2e15b3e91279c4dbdc50e822bbffac,
-    type: 3}
 --- !u!114 &1658827569273723168
 MonoBehaviour:
   m_ObjectHideFlags: 0
