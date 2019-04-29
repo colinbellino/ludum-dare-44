@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
 {
-	[SerializeField] private TMPro.TextMeshProUGUI currentHealthText;
+	// [SerializeField] private TMPro.TextMeshProUGUI currentHealthText;
 	[SerializeField] private Image healthBar;
 	private Health playerHealth;
 
@@ -23,8 +23,8 @@ public class HealthUI : MonoBehaviour
 
 	private void RefreshUI()
 	{
-		currentHealthText.text = $"{playerHealth.current} / {playerHealth.max}";
-		float barP = (float)playerHealth.current / playerHealth.max;
+		// currentHealthText.text = $"{playerHealth.current} / {playerHealth.max}";
+		float barP = (float) playerHealth.current / playerHealth.max;
 		healthBar.transform.localScale = new Vector2(1f, barP);
 	}
 }
