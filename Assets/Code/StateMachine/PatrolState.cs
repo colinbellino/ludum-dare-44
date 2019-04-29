@@ -51,6 +51,9 @@ public class PatrolState : BaseState
 	{
 		if (data.source != transform || !data.other.CompareTag("Player")) { return; }
 
-		_scared = true;
+		if (_chicken.FleeDestination)
+		{
+			_scared = true;
+		}
 	}
 }

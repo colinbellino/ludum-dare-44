@@ -19,8 +19,8 @@ GameObject:
   - component: {fileID: 4621834058476148695}
   - component: {fileID: 8142317237339538288}
   - component: {fileID: 8362546962746030766}
-  - component: {fileID: 7310788326123966706}
   - component: {fileID: 2328308825194956694}
+  - component: {fileID: 937637308597119989}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d37fbde25c6324999c67f87c329a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
-  _defaultSpeed: 6
+  animator: {fileID: 3239080907639332500}
+  defaultSpeed: 8
 --- !u!114 &7712523450031832460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +134,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGameOver:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6796603522001184214}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: bfefbe5081044410b91100da0c779243,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &6590077447285462950
@@ -206,22 +218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad4207b3f3b746108080c572a7678ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &7310788326123966706
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7712523450031832449}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.75}
-  serializedVersion: 2
-  m_Radius: 1
 --- !u!114 &2328308825194956694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +231,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CaptureSound: {fileID: 8300000, guid: a3ff7e6a556444f4d980e46ba7f2d658, type: 3}
+--- !u!70 &937637308597119989
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7712523450031832449}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.79}
+  m_Size: {x: 1.75, y: 1.38}
+  m_Direction: 1
 --- !u!1 &7712523450258335314
 GameObject:
   m_ObjectHideFlags: 0
