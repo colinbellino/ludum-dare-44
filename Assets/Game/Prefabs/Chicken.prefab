@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 007df21b37309436c8e95d375dc7eb2d, type: 3}
-  playInterval: 3
+  playInterval: 5
 --- !u!114 &5811825155059855984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +173,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  explosionPrefab: {fileID: 4238690672222575468, guid: af2e15b3e91279c4dbdc50e822bbffac,
+    type: 3}
 --- !u!114 &1658827569273723168
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OnCapture : MonoBehaviour
 {
+	[SerializeField] private UnityEvent CaptureEvent;
 	private OnContact CaptureCreatures;
 	private Health PlayerHealth;
 	private PlayerBag PlayerBag;
@@ -30,5 +32,6 @@ public class OnCapture : MonoBehaviour
 
 		PlayerHealth.AddHealth(capturedCreatureData.health);
 		PlayerBag.AddCapturedCreature(capturedCreatureData);
+		CaptureEvent?.Invoke();
 	}
 }

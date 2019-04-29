@@ -14,11 +14,11 @@ public class OnContact : MonoBehaviour
 	{
 		input = GetComponent<IInput>();
 
-		if (PlayerProjectile)
-		{
-			ProjectileInstance = Instantiate(PlayerProjectile);
-			ProjectileInstance.SetActive(false);
-		}
+		// if (PlayerProjectile)
+		// {
+		// 	ProjectileInstance = Instantiate(PlayerProjectile);
+		// 	ProjectileInstance.SetActive(false);
+		// }
 	}
 
 	private void Update()
@@ -28,12 +28,12 @@ public class OnContact : MonoBehaviour
 			var positionToCapture = CalculateProjectilePosition();
 
 			CaptureCreature(positionToCapture);
-			ProjectileInstance.transform.position = positionToCapture;
-			ProjectileInstance.SetActive(true);
+			// ProjectileInstance.transform.position = positionToCapture;
+			// ProjectileInstance.SetActive(true);
 		}
 		else
 		{
-			ProjectileInstance.SetActive(false);
+			// ProjectileInstance.SetActive(false);
 		}
 	}
 

@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class CreatureFacade : MonoBehaviour
 {
+	public GameObject explosionPrefab;
 	public Creature CreatureData;
-
 	public UnityEvent OnCaptureEvent;
 
 	private void OnEnable()
@@ -27,9 +27,12 @@ public class CreatureFacade : MonoBehaviour
 	{
 		if (data.captured != transform) { return; }
 
-		if (OnCaptureEvent != null)
-		{
-			OnCaptureEvent.Invoke();
-		}
+		OnCaptureEvent?.Invoke();
+		SpawnExplosion();
+	}
+
+	private void SpawnExplosion()
+	{
+		var instance = GameObject.Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 	}
 }
