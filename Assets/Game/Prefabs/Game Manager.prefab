@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39661e1839817024b89b8b16be56a538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tick: 3
+  tick: 0.2
   damagePerTick: 1

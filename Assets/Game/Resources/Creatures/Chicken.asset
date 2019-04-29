@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   name: Chicken
-  health: 10
+  health: 15
   damage: 10
+  passiveSound: []
+  hurtSound: {fileID: 0}
